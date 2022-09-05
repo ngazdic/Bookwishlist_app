@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Book>
 
 <h2>Books</h2>
+
+<div style="display: block">
+    <a href="/Book/InsertBook/">Create a New Book</a>
+</div>
+
 <table class="table">
     <tr>
         <th>ID</th>
@@ -8,11 +13,11 @@
         
     </tr>
 
-    @foreach (var product in Model)
+    @foreach (var book in Model)
     {
         <tr>
-            <td>@product.ID</td>
-            <td>@product.Name</td>
+            <td><a href="/Book/ViewBook/@book.ID">@book.ID</a></td>
+            <td>@book.Name</td>
             
         </tr>
     }
