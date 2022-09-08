@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Book>
+
+<h2>Search Books</h2>
+
+
+
+<table class="table">
+    <tr>
+        
+        <th>Name</th>
+
+    </tr>
+
+    @foreach (var book in Model)
+    {
+        <tr>
+            
+            <td>@book.Name</td>
+
+        </tr>
+    }
+
+
+
+</table>

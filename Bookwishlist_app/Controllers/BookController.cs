@@ -67,6 +67,21 @@ namespace Bookwishlist_app.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public IActionResult DeleteBook (Book book)
+        {
+            repo.DeleteBook(book);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult SearchBooks (string searchstring)
+        {
+
+            var api = new APIGet();
+            var books = api.SearchBooks(searchstring);
+            return View(books);
+        }
+
     }
 }
 
